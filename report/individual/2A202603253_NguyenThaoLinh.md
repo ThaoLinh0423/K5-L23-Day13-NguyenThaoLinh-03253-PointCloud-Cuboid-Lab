@@ -1,29 +1,38 @@
-# Báo cáo Day 13 — <Họ và tên>, <MSSV>
+# Báo cáo Day 13 — <Nguyễn Thảo Linh>, <2A202603253>
 
-> **Cách dùng mẫu này:** đổi tên file thành `<MSSV>_<HoTen>.md` (họ tên không dấu, viết liền), ví dụ `2A202600123_NguyenVanAn.md`. Đổi tên, đừng chép thành file thứ hai.
->
 > Xoá mọi dấu TODO và dòng gợi ý (dòng bắt đầu bằng `>`). Mỗi con số lấy từ **bảng A** hoặc **phiếu tự kiểm** trong `submission/`, kèm đơn vị (m, °). Ảnh để trong `report/individual/images/` (nộp LMS trong file zip, không commit); trong báo cáo chỉ ghi **tên file ảnh**. Báo cáo này nằm trên repo public: không chép biển số, chữ trên biển hiệu hay biển chỉ đường, tên đường, địa danh; nhắc tới bạn khác thì ghi MSSV, không ghi họ tên. Cả báo cáo ~2 trang.
 
 ## 1. Kết luận trước
-TODO(học viên): mã số, task `D13-…`, 10 frame của bạn; hệ điều hành, trình duyệt, phiên bản CVAT (tên tài khoản → About); MSSV bạn ngồi cạnh. Rồi 2–3 câu: tổng bao nhiêu cuboid, frame nào ít nhất và vì sao; `selfcheck` cờ bao nhiêu cuboid trên tổng số; bạn tin phần nào nhất và phần nào còn yếu nhất (hướng, đáy, kích thước, class, vật xa).
+Mã số: **2A202603253**; task: **D13-2A202603253**. Lệnh `python scripts/lab.py dry` chạy thành công và chọn 10 frame: `s01f05`, `s01f52`, `s02f10`, `s02f36`, `s03f13`, `s03f55`, `s04f20`, `s04f39`, `s05f04`, `s05f23`; mỗi frame có 7 camera. Môi trường đang dùng là Windows PowerShell với `.venv`; Chrome đang mở.
 
-TODO(học viên): cách dùng CVAT, 3 dòng: đổi góc nhìn (nhìn từ trên xuống, xoay, dời); vẽ và chỉnh một cuboid (Shape, nháy đúp, Top/Side/Front); bật mũi tên hướng (Cuboid orientation) và xem cuboid trên ảnh camera (`preview`).
+Chưa có bảng A hoặc phiếu tự kiểm trong thư mục `submission/`, nên chưa xác nhận được tổng số cuboid, frame có ít nhất, hay số cuboid bị `selfcheck` gắn cờ. Cần bổ sung sau khi lưu nhãn và chạy `python scripts/lab.py sync`. Chưa ghi nhận đánh giá cá nhân về phần chắc/yếu nhất, phiên bản CVAT/tên tài khoản trong About, hoặc MSSV bạn ngồi cạnh.
+
+Thao tác CVAT cần mô tả sau khi xác nhận đã thực hiện: (1) xoay khung 3D để nhìn từ trên xuống, kéo để xoay hoặc dời cảnh; (2) chọn **Shape**, đặt cuboid bằng nháy đúp rồi chỉnh trên Top/Side/Front; (3) bật **Cuboid orientation** để kiểm tra hướng và dùng `python scripts/lab.py preview` để xem cuboid trên ảnh camera.
 
 ## 2. Đọc frame (Bước 2)
 Hai frame đọc kỹ. Ảnh: `t1-<frame>-3d`, `t1-<frame>-top` (ảnh nhìn từ trên xuống, có đánh dấu phía trước, +x, +y).
 
 | Frame | Phía trước xe ở cạnh nào của ảnh nhìn từ trên xuống; +x, +y chỉ về đâu | Mặt đường (phẳng/dốc; thấp hơn LiDAR ~ m) | Vật xa nhất đọc được (~ m) | Loại vật thấy | Vật phía sau / hai bên | Cụm chưa đọc được |
 |---|---|---|---|---|---|---|
-| TODO(học viên) | | | | | | |
-| TODO(học viên) | | | | | | |
+| s01f05 |Phía trước (−y) ở cạnh trên; +x chỉ sang trái, +y chỉ xuống dưới |Tương đối phẳng, thấp hơn LiDAR ~1.72 m |~89 m (một xe bus cùng chiều phía trước) | Xe con, xe bus, dải phân cách, hàng cây, xe van |Phía sau (cam09): 6 xe con; bên phải: làn đường trống |Cụm điểm rất thưa phía sau, chỉ còn vài điểm rời rạc, không rõ xe hay biển báo |
+| s01f52 |Phía trước (−y) ở cạnh trên; +x chỉ sang trái, +y chỉ xuống dưới|Tương đối phẳng, thấp hơn LiDAR ~1.72 m |~80 m (một xe bus đi vuông góc)  |Xe con, xe bus, dải phân cách, hàng cây, xe van |Phía sau (cam09): 2 xe con; bên phải: làn đường trống |Cụm điểm rất thưa phía sau, chỉ còn vài điểm rời rạc, không rõ xe hay biển báo | 
 
 TODO(học viên): 3 điều **chỉ camera** cho biết và 3 điều **chỉ LiDAR** cho biết, lấy từ chính hai frame trên.
+Camera cho biết: màu xe, 
+Lidar cho biết: khoảng cách, 
 
 Tám frame lướt:
 
-| Frame | Phía trước ở cạnh nào của ảnh nhìn từ trên xuống | Điều lạ (nếu có) |
+| Frame | Phía trước ở cạnh nào của ảnh nhìn từ trên xuống | Điều lạ  |
 |---|---|---|
-| TODO(học viên) | | |
+| s02f10 | | |
+| s02f36 | | |
+| s03f13 | | |
+| s03f55 | | |
+| s04f20 | | |
+| s04f39 | | |
+| s05f04 | | |
+| s05f23 | | |
 
 ## 3. Ba cuboid có hướng dẫn (Bước 3)
 Ảnh: `t2-a-car`, `t2-b-bus-truck`, `t2-c-ped-cyclist`.
