@@ -5,7 +5,8 @@
 ## 1. Kết luận trước
 Mã số: **2A202603253**; task: **D13-2A202603253**. Lệnh `python scripts/lab.py dry` chạy thành công và chọn 10 frame: `s01f05`, `s01f52`, `s02f10`, `s02f36`, `s03f13`, `s03f55`, `s04f20`, `s04f39`, `s05f04`, `s05f23`; mỗi frame có 7 camera. Môi trường đang dùng là Windows PowerShell với `.venv`; Chrome đang mở.
 
-Chưa có bảng A hoặc phiếu tự kiểm trong thư mục `submission/`, nên chưa xác nhận được tổng số cuboid, frame có ít nhất, hay số cuboid bị `selfcheck` gắn cờ. Cần bổ sung sau khi lưu nhãn và chạy `python scripts/lab.py sync`. Chưa ghi nhận đánh giá cá nhân về phần chắc/yếu nhất, phiên bản CVAT/tên tài khoản trong About, hoặc MSSV bạn ngồi cạnh.
+Tổng số cuboid: 62, frame ít nhất: s05f23, số cunboid bị 'selfcheck' gắn cờ:.
+Chưa có bảng A hoặc phiếu tự kiểm trong thư mục `submission/`, nên chưa xác nhận được tổng số cuboid, frame có ít nhất, hay số cuboid bị `selfcheck` gắn cờ.
 
 Thao tác CVAT cần mô tả sau khi xác nhận đã thực hiện: (1) xoay khung 3D để nhìn từ trên xuống, kéo để xoay hoặc dời cảnh; (2) chọn **Shape**, đặt cuboid bằng nháy đúp rồi chỉnh trên Top/Side/Front; (3) bật **Cuboid orientation** để kiểm tra hướng và dùng `python scripts/lab.py preview` để xem cuboid trên ảnh camera.
 
@@ -39,7 +40,7 @@ Tám frame lướt:
 
 | Vật | Frame, idx | Class | Mũi tên yaw đúng hướng? | Đáy chạm đường? | Đã kiểm Top/Side/Front + ảnh? | Kích thước trong bảng 4.3? |
 |---|---|---|---|---|---|---|
-| (a) xe con gần | TODO(học viên) | | | | | |
+| (a) xe con gần | s01f05,1 |car |có |có  |  | |
 | (b) xe buýt hoặc xe tải | TODO(học viên) | | | | | |
 | (c) người đi bộ hoặc xe hai bánh | TODO(học viên) | | | | | |
 
